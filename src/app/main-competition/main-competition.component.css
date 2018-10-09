@@ -1,7 +1,7 @@
 .selectTR:hover{
+  border-left: 8px solid;
   background-color: lightgrey;
-  position: relative;
-  right: 10px;
+  cursor:pointer;
 }
 
 

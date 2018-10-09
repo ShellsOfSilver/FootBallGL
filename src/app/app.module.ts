@@ -8,6 +8,7 @@ import { MainCompetitionComponent } from './main-competition/main-competition.co
 import { MainMatchComponent } from './main-match/main-match.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DataIdServise} from './dataId.servise';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import {DataIdServise} from './dataId.servise';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
+
   ],
   providers: [GetFootBallDataServise, DataIdServise],
   bootstrap: [AppComponent]

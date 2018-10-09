@@ -1,0 +1,21 @@
+.errorBlock{
+  margin: 5px;
+  border-radius: 15px;
+  padding: 8px;
+  display: inline-flex;
+}
+.btnError{
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 10px;
+  cursor:pointer;
+}
+.selectTR:hover{
+  border-left: 8px solid;
+  cursor: default;
+}
+
+
