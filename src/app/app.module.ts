@@ -2,15 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {GetFootBallDataServise} from './getFootBallData.servise';
+import { MainCompetitionComponent } from './main-competition/main-competition.component';
+import { MainMatchComponent } from './main-match/main-match.component';
+import {AppRoutingModule} from './app-routing.module';
+import {DataIdServise} from './dataId.servise';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainCompetitionComponent,
+    MainMatchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [GetFootBallDataServise, DataIdServise],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

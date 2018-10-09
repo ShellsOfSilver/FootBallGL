@@ -1,0 +1,26 @@
+
+<h1 align="center" >Match list</h1>
+<div class="col-xs-8 col-xs-offset-2">
+  <div style="font-size: 80%">{{errorMessage}}</div>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Guests</th>
+      <th scope="col">Home</th>
+      <th scope="col">Group</th>
+      <th scope="col">Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let i of dataMatch" class="selectTR">
+      <td>{{i['id']}}</td>
+      <td [ngStyle]="{'background-color':i['score']['winner'] === 'AWAY_TEAM' ? '#99FF66' : '#FF6666' }">{{i['awayTeam']['name']}}</td>
+      <td [ngStyle]="{'background-color':i['score']['winner'] === 'HOME_TEAM' ? '#99FF66' : '#FF6666' }">{{i['homeTeam']['name']}}</td>
+      <td>{{i['group']}}</td>
+      <td>{{i['score']['fullTime']['awayTeam']}} : {{i['score']['fullTime']['homeTeam']}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

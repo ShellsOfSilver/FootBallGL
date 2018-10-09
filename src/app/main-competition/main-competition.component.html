@@ -1,0 +1,19 @@
+<h1 align="center">Competition list</h1>
+<div class="col-xs-8 col-xs-offset-2">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Area</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let i of dataCompetition" class="selectTR" (click)="choseCompetition(i)">
+      <td>{{i['id']}}</td>
+      <td>{{i['name']}}</td>
+      <td>{{i['area']['name']}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
