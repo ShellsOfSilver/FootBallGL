@@ -17,12 +17,19 @@ interface Competition {
 export class MainCompetitionComponent implements OnInit {
 
   dataCompetition;
-
+  showUnderDiv;
+  againOpen = false;
   constructor(private fbservise: GetFootBallDataServise, private rout: Router, private data: DataIdServise) { }
 
   choseCompetition(i: Competition) {
     this.data.setData(i);
-    this.rout.navigate(['/match']);
+    if (this.showUnderDiv === i) {
+    this.againOpen = !this.againOpen;
+    } else {
+      this.againOpen = true;
+    }
+    this.showUnderDiv = i;
+    //this.rout.navigate(['/match']);
   }
 
   ngOnInit() {

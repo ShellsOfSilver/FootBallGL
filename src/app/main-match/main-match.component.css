@@ -13,9 +13,6 @@
   margin-left: 10px;
   cursor:pointer;
 }
-.selectTR:hover{
-  border-left: 8px solid;
-  cursor: default;
-}
+
 
 

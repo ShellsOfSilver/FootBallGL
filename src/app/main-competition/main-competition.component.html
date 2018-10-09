@@ -1,19 +1,34 @@
 <h1 align="center">Competition list</h1>
 <div class="col-xs-8 col-xs-offset-2">
-  <table class="table">
-    <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Area</th>
+  <table class="table" style="margin-bottom: 0px;">
+    <thead>
+    <tr style="background-color: #212529; color: white;">
+      <th width="30%">Name</th>
+      <th width="30%">Area</th>
+      <th width="20%">Start</th>
+      <th width="20%" >End</th>
     </tr>
     </thead>
-    <tbody>
-    <tr *ngFor = "let i of dataCompetition" class="selectTR" (click)="choseCompetition(i)">
-      <td>{{i['id']}}</td>
-      <td>{{i['name']}}</td>
-      <td>{{i['area']['name']}}</td>
+  </table>
+  <div *ngFor = "let i of dataCompetition" style="margin-bottom: -15px">
+  <table class="table">
+    <tbody [ngStyle]="{'background-color': againOpen && showUnderDiv===i ? '#5682a3' : 'white','color':
+    againOpen && showUnderDiv===i ? 'white':'black'}">
+    <tr  class="selectTR" (click)="choseCompetition(i)">
+      <td width="30%">{{i['name']}}</td>
+      <td width="30%">{{i['area']['name']}}</td>
+      <td width="20%">{{i['currentSeason']['startDate']}}</td>
+      <td width="20%">{{i['currentSeason']['endDate']}}</td>
     </tr>
     </tbody>
   </table>
+  <div *ngIf = "showUnderDiv===i && againOpen">
+    <app-main-match></app-main-match>
+  </div>
+  </div>
 </div>
+
+
+
+
+

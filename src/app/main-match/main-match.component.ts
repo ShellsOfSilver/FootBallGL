@@ -28,6 +28,7 @@ export class MainMatchComponent implements OnInit {
     color: string;
     animation: string;
   }[] = [];
+  visibleLocal = true;
   dataMatch;
   emptyError: boolean;
   constructor(private dataSer: DataIdServise, private fbservise: GetFootBallDataServise) {
@@ -41,6 +42,9 @@ export class MainMatchComponent implements OnInit {
         this.errorMessage.splice(index, 1);
       }
     }, 300);
+  }
+  showLocalDb(){
+    this.visibleLocal = false;
   }
   ngOnInit() {
     this.fbservise.getMatchList(this.data['id']).subscribe(
