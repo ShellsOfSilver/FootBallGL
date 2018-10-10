@@ -4,4 +4,26 @@
   cursor:pointer;
 }
 
+input[type=text] {
+  background: url(https://res.abc.net.au/bundles/2.1.0/images/icon-search-grey@1x.png) no-repeat 9px center;
+  border: solid 1px #ededed;
+  padding: 9px 10px 9px 40px;
+  width: 52px;
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+  cursor: pointer;
+}
+input[type=text]:focus {
+  width: 200px;
+  background-color: #fff;
+  border-color: #6dcff6;
+  cursor: text;
+}
+
 

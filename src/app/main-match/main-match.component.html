@@ -1,31 +1,15 @@
-
-<!--<h1 align="center" >Match list</h1>-->
-<!--<div class="col-xs-8 col-xs-offset-2">-->
-  <!--<div *ngIf = [emptyError]>-->
-    <!--<div *ngFor = "let i of errorMessage">-->
-      <!--<div class = "errorBlock" [@moveError] = "i.animation" [ngStyle]="{'background-color':i.color === 'red' ? '#FF6666':'#99FF66'}">-->
-        <!--{{i.name}}<span class ="btnError"(click)="deleteError(i)">  x  </span>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-
-<div *ngIf = [emptyError] style = "margin: -10px -10px 20px 10px;">
-  <div class = "errorBlock" *ngIf = visibleLocal>
+<div *ngIf = emptyError style = "margin: -10px -10px 20px 10px;">
+  <div class = "errorBlock">
     <div style="background-color: #FF6666;border-radius: 5px;display: inline;padding: 10px">
       something went wrong
     </div>
-    <button class="btn btn-primary" (click)="showLocalDb()" style="margin-left:10px">Load local DB</button>
+    <button class="btn btn-primary" (click)="emptyError = false" style="margin-left:10px">Load local DB</button>
   </div>
-
 </div>
-
-<div *ngIf = !visibleLocal style="background-color: whitesmoke; cursor:default">
+<div *ngIf = "!emptyError" style="background-color: whitesmoke; cursor:default">
   <table class="table">
     <tbody>
     <tr *ngFor = "let i of dataMatch" class="selectTR">
-      <!--<td [ngStyle]="{'background-color':i['score']['winner'] === 'AWAY_TEAM' ? '#99FF66' : '#FF6666' }">{{i['awayTeam']['name']}}</td>-->
-      <!--<td [ngStyle]="{'background-color':i['score']['winner'] === 'HOME_TEAM' ? '#99FF66' : '#FF6666' }">{{i['homeTeam']['name']}}</td>-->
       <td align="right">{{i['awayTeam']['name']}}</td>
       <td align="center">{{i['score']['fullTime']['awayTeam']}} : {{i['score']['fullTime']['homeTeam']}} </td>
       <td align="left">{{i['homeTeam']['name']}}</td>

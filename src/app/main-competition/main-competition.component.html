@@ -1,5 +1,6 @@
-<h1 align="center">Competition list</h1>
+<h1 align="center" style="margin-bottom: -30px;">Competition list</h1>
 <div class="col-xs-8 col-xs-offset-2">
+  <input type="text" placeholder="search name" style="float: right;margin-bottom:10px" [(ngModel)] = "searchString">
   <table class="table" style="margin-bottom: 0px;">
     <thead>
     <tr style="background-color: #212529; color: white;">
@@ -10,7 +11,7 @@
     </tr>
     </thead>
   </table>
-  <div *ngFor = "let i of dataCompetition" style="margin-bottom: -15px">
+  <div *ngFor = "let i of dataCompetition | searchCom:searchString" style="margin-bottom: -15px">
   <table class="table">
     <tbody [ngStyle]="{'background-color': againOpen && showUnderDiv===i ? '#5682a3' : 'white','color':againOpen && showUnderDiv===i ? 'white':'black'}">
     <tr  class="selectTR" (click)="choseCompetition(i)" *ngIf = "i['currentSeason']">
@@ -25,6 +26,8 @@
     <app-main-match></app-main-match>
   </div>
   </div>
+  <button (click)="loadAll()">Load all competition</button>
+  <button (click)="loadAv()">Load available competitions</button>
 </div>
 
 

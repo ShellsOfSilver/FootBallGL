@@ -2,7 +2,7 @@
   "filters": {
     "matchday": "1"
   },
-  "competition": {
+  "competition": [{
     "id": 2021,
     "area": {
       "id": 2072,
@@ -12,7 +12,7 @@
     "code": "PL",
     "plan": "TIER_ONE",
     "lastUpdated": "2018-08-23T11:51:26Z"
-  },
+  }],
   "matches": [
     {
       "id": 233028,

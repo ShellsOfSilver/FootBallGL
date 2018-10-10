@@ -16,7 +16,10 @@ interface Competition {
 })
 export class MainCompetitionComponent implements OnInit {
 
-  dataCompetition;
+  dataCompetition = [];
+  tempAll;
+  tempAv;
+  searchString = '';
   showUnderDiv;
   againOpen = false;
   constructor(private fbservise: GetFootBallDataServise, private rout: Router, private data: DataIdServise) { }
@@ -29,16 +32,31 @@ export class MainCompetitionComponent implements OnInit {
       this.againOpen = true;
     }
     this.showUnderDiv = i;
-    //this.rout.navigate(['/match']);
   }
 
+  available_competitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021];
   ngOnInit() {
     this.fbservise.getCompetition().subscribe(
       (response) => {
         console.log(response['competitions']);
-        this.dataCompetition = response['competitions'];
+        this.tempAll = response['competitions'];
+
+        response['competitions'].forEach((item) => {
+          this.available_competitions.forEach((id) => {
+            if (item['id'] === id) {
+              this.dataCompetition.push(item);
+            }
+          });
+        });
+        this.tempAv = this.dataCompetition;
       }
     );
+  }
+  loadAll() {
+    this.dataCompetition = this.tempAll;
+  }
+  loadAv() {
+    this.dataCompetition = this.tempAv;
   }
 
 }
