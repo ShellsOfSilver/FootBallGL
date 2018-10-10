@@ -12,12 +12,11 @@
   </table>
   <div *ngFor = "let i of dataCompetition" style="margin-bottom: -15px">
   <table class="table">
-    <tbody [ngStyle]="{'background-color': againOpen && showUnderDiv===i ? '#5682a3' : 'white','color':
-    againOpen && showUnderDiv===i ? 'white':'black'}">
-    <tr  class="selectTR" (click)="choseCompetition(i)">
+    <tbody [ngStyle]="{'background-color': againOpen && showUnderDiv===i ? '#5682a3' : 'white','color':againOpen && showUnderDiv===i ? 'white':'black'}">
+    <tr  class="selectTR" (click)="choseCompetition(i)" *ngIf = "i['currentSeason']">
       <td width="30%">{{i['name']}}</td>
       <td width="30%">{{i['area']['name']}}</td>
-      <td width="20%">{{i['currentSeason']['startDate']}}</td>
+      <td width="20%" >{{i['currentSeason']['startDate']}}</td>
       <td width="20%">{{i['currentSeason']['endDate']}}</td>
     </tr>
     </tbody>
