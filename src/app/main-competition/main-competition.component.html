@@ -1,6 +1,10 @@
 <h1 align="center" style="margin-bottom: -30px;">Competition list</h1>
 <div class="col-xs-8 col-xs-offset-2">
-  <input type="text" placeholder="search name" style="float: right;margin-bottom:10px" [(ngModel)] = "searchString">
+  <input type="text" placeholder="search name"
+         style="float: right;margin-bottom:10px"
+         [(ngModel)] = "searchString"
+         [ngClass]="{'showText':searchString !=='','hiddenText':searchString ===''}"
+  >
   <table class="table" style="margin-bottom: 0px;">
     <thead>
     <tr style="background-color: #212529; color: white;">

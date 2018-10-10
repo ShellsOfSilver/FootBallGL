@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {GetFootBallDataServise} from '../getFootBallData.servise';
 import {Router} from '@angular/router';
 import {DataIdServise} from '../dataId.servise';
+import {DOCUMENT} from '@angular/common';
 
 interface Competition {
   id: number;
@@ -15,7 +16,6 @@ interface Competition {
   styleUrls: ['./main-competition.component.css']
 })
 export class MainCompetitionComponent implements OnInit {
-
   dataCompetition = [];
   tempAll;
   tempAv;
@@ -33,7 +33,6 @@ export class MainCompetitionComponent implements OnInit {
     }
     this.showUnderDiv = i;
   }
-
   available_competitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021];
   ngOnInit() {
     this.fbservise.getCompetition().subscribe(
